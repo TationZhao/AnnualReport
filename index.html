@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵天顺 | 2025年度年终述职</title>
+    <script src="./assets/js/echarts.min.js"></script>
+    <script src="./assets/js/tailwind.js"></script>
+    <link rel="stylesheet" href="./assets/css/fontawesome.min.css">
+    <style>
+        :root {
+            --boss-green: #00BEBD;
+            --bg-dark: #0f172a;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            font-family: 'PingFang SC', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            position: fixed;
+            background: var(--bg-dark);
+            color: white;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            border-left: 4px solid transparent;
+            transition: 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .nav-item i {
+            width: 1.5rem;
+            text-align: center;
+            margin-right: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        .nav-item.active {
+            background: rgba(0, 190, 189, 0.1);
+            color: var(--boss-green);
+            border-left-color: var(--boss-green);
+            font-weight: bold;
+        }
+
+        .user-info {
+            padding: 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .user-name {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .user-role {
+            font-size: 0.85rem;
+            color: var(--boss-green);
+            margin-top: 2px;
+        }
+
+        /* 内容区 */
+        main {
+            margin-left: 220px;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 2.5rem 3.5rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* 卡片 & 数据样式 */
+        .hero-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
+        }
+
+        .data-box {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 1px solid #edf2f7;
+        }
+
+        .big-num {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #1e293b;
+            letter-spacing: -1.5px;
+        }
+
+        .unit {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-left: 2px;
+        }
+
+        .stat-label-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #475569;
+            margin-bottom: 4px;
+        }
+
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .truncate-list {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            display: block;
+        }
+
+        .q-btn {
+            color: #94a3b8;
+            transition: 0.3s;
+        }
+
+        .q-btn.active-q {
+            background: white;
+            color: var(--boss-green);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .doc-table th {
+            background: #f8fafc;
+            color: #64748b;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .doc-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .doc-tag {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="p-6 mb-4">
+            <h1 class="text-2xl font-black tracking-tighter" style="color: var(--boss-green);">BOSS 直聘</h1>
+            <p class="text-[15px] text-slate-500 uppercase tracking-widest mt-1">2025 年终述职</p>
+        </div>
+        <nav class="flex-1">
+            <a href="#welcome" class="nav-item active"><i class="fas fa-address-card"></i>总览信息</a>
+            <a href="#req-view" class="nav-item"><i class="fas fa-sitemap"></i>业务全景视图</a>
+            <a href="#quality-data" class="nav-item"><i class="fas fa-chart-bar"></i>业务质量数据</a>
+            <a href="#special" class="nav-item"><i class="fas fa-microchip"></i>专项建设成果</a>
+            <a href="#tools" class="nav-item"><i class="fas fa-screwdriver-wrench"></i>提效工具开发</a>
+            <a href="#future" class="nav-item"><i class="fas fa-paper-plane"></i>未来规划</a>
+            <a href="#summary" class="nav-item"><i class="fas fa-thumbs-up"></i>致谢</a>
+        </nav>
+        <div class="user-info">
+            <div class="user-name">赵天顺 - 测试七组</div>
+            <div class="user-role">测试工程师 - T3</div>
+        </div>
+    </aside>
+
+    <main>
+        <section id="welcome">
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-black text-slate-800 tracking-tight">2025 年终述职 - 赵天顺</h2>
+                <p class="text-slate-400 mt-1 font-medium tracking-[0.2em] uppercase text-[10px]">Quality Assurance
+                    Annual Report</p>
+            </div>
+
+            <div class="grid grid-cols-12 gap-6 flex-1 min-h-0">
+                <div class="col-span-4 flex flex-col h-full">
+                    <div class="hero-card p-8 h-full border-t-4 border-teal-500">
+                        <h3 class="text-lg font-bold text-slate-800 mb-10 flex items-center">
+                            <i class="fas fa-list-check mr-3 text-teal-500"></i>职责概述
+                        </h3>
+                        <div class="space-y-12 flex-1">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mr-4 shrink-0">
+                                    <i class="fas fa-check text-teal-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-base">系统质量保障</h4>
+                                    <p class="text-sm text-slate-500 mt-2">负责管家全流程系统质保及直书支持</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mr-4 shrink-0">
+                                    <i class="fas fa-sync text-teal-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-base">业务流程管理</h4>
+                                    <p class="text-sm text-slate-500 mt-2">推动提测/发布准出线上化与规范建设</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mr-4 shrink-0">
+                                    <i class="fas fa-code-branch text-teal-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-base">提效工具研发</h4>
+                                    <p class="text-sm text-slate-500 mt-2">针对复杂业务自研定制化测试提效工具</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-8 grid grid-rows-2 gap-6">
+                    <div class="hero-card p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-5 flex items-center"><i
+                                class="fas fa-chart-line mr-3 text-teal-500"></i>核心质量指标</h3>
+                        <div class="grid grid-cols-3 gap-5">
+                            <div class="data-box border-b-4 border-teal-500">
+                                <div class="stat-label-title">年度保障需求</div>
+                                <div class="mt-2 flex items-baseline"><span class="big-num">169</span><span
+                                        class="unit">个</span></div>
+                                <div class="mt-3 text-xs font-bold text-emerald-500">0 线上 P0/P1 故障</div>
+                            </div>
+                            <div class="data-box border-b-4 border-teal-500 bg-emerald-50/30">
+                                <div class="stat-label-title text-emerald-700">年度线上漏出率</div>
+                                <div class="mt-2 flex items-baseline"><span
+                                        class="big-num text-emerald-600">4.05</span><span
+                                        class="unit text-emerald-600/50">%</span></div>
+                                <div class="mt-3 text-sm font-black text-emerald-600">↓ 同比下降 27.27%</div>
+                            </div>
+                            <div class="data-box border-b-4 border-teal-500">
+                                <div class="stat-label-title">累计发现缺陷</div>
+                                <div class="mt-2 flex items-baseline"><span class="big-num">454</span><span
+                                        class="unit">个</span></div>
+                                <div class="mt-3 text-xs text-slate-600 font-bold">含直书业务 25 个</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-card p-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-5 flex items-center"><i
+                                class="fas fa-cubes-stacked mr-3 text-teal-500"></i>资产沉淀与提效</h3>
+                        <div class="grid grid-cols-3 gap-5">
+                            <div class="data-box border-b-4 border-blue-500">
+                                <div class="stat-label-title">新增测试用例</div>
+                                <div class="mt-2 flex items-baseline"><span
+                                        class="big-num text-blue-600">5186</span><span class="unit">条</span></div>
+                                <div class="mt-3 text-[11px] text-slate-500 font-bold">需求2927 / 基线1935 / 回归324</div>
+                            </div>
+                            <div class="data-box border-b-4 border-purple-500">
+                                <div class="stat-label-title">自研提效工具</div>
+                                <div class="mt-2 flex items-baseline"><span
+                                        class="big-num text-purple-600">4</span><span class="unit">款</span></div>
+                                <div class="mt-3 text-sm text-purple-600 font-black">效能提升约 20 倍</div>
+                            </div>
+                            <div class="data-box border-b-4 border-orange-500">
+                                <div class="stat-label-title">核心文档沉淀</div>
+                                <div class="mt-2 flex items-baseline"><span
+                                        class="big-num text-orange-600">7</span><span class="unit">篇</span></div>
+                                <div class="mt-3 text-xs text-slate-500 font-bold">涵盖全流程规范与实践</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="req-view" class="bg-white">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-2xl font-black text-slate-800 flex items-center">
+                    <span class="w-2 h-8 mr-4 rounded-full" style="background: var(--boss-green);"></span>
+                    业务全景视图 <span class="ml-4 text-xs font-normal text-slate-400">/ 需求分布与业务重点</span>
+                </h3>
+                <div class="flex bg-slate-100 p-1 rounded-xl">
+                    <button onclick="switchQuarter(1)" class="q-btn px-6 py-2 rounded-lg text-sm font-bold active-q"
+                        data-q="1">Q1</button>
+                    <button onclick="switchQuarter(2)" class="q-btn px-6 py-2 rounded-lg text-sm font-bold"
+                        data-q="2">Q2</button>
+                    <button onclick="switchQuarter(3)" class="q-btn px-6 py-2 rounded-lg text-sm font-bold"
+                        data-q="3">Q3</button>
+                    <button onclick="switchQuarter(4)" class="q-btn px-6 py-2 rounded-lg text-sm font-bold"
+                        data-q="4">Q4</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-6 flex-1 min-h-0">
+                <div class="col-span-7 flex flex-col space-y-4">
+                    <div class="hero-card p-6 flex-[2] relative min-h-[420px]">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-slate-700 text-lg">需求分布</h4>
+                            <div class="text-right">
+                                <p class="text-[10px] text-slate-400 uppercase">Quarter Total</p>
+                                <p id="totalNumDisplay" class="text-2xl font-black text-slate-800">--</p>
+                            </div>
+                        </div>
+                        <div id="reqDistChart" style="width: 100%; height: 360px;"></div>
+                        <div
+                            class="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+                            <p id="centerTotal" class="text-3xl font-black text-slate-800">--</p>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase">Deliveries</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-card p-6 flex-1 bg-slate-50/50">
+                        <h4 class="font-bold text-slate-700 mb-4 text-sm flex items-center">
+                            <i class="fas fa-bullseye mr-2 text-orange-400"></i>年度业务重点
+                        </h4>
+                        <div id="quarterFocus" class="text-sm text-slate-600 space-y-3"></div>
+                    </div>
+                </div>
+
+                <div class="col-span-5 flex flex-col h-full overflow-hidden">
+                    <div class="hero-card p-6 h-full flex flex-col border-l-4 border-teal-500">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="font-bold text-slate-700 flex items-center">
+                                <i class="fas fa-list-check mr-2 text-teal-500"></i>版本需求清单
+                            </h4>
+                            <a href="https://zhishu.zhipin.com/docs/58pAWtzrtCe" target="_blank"
+                                class="text-[10px] text-teal-600 hover:underline font-bold">
+                                详情 <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                        <div class="overflow-y-auto flex-1 pr-2 custom-scroll space-y-6" id="reqDetailList"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quality-data" class="bg-slate-50">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-2xl font-black text-slate-800 flex items-center">
+                    <span class="w-2 h-8 mr-4 rounded-full" style="background: #3b82f6;"></span>
+                    业务质量数据 <span class="ml-4 text-xs font-normal text-slate-400">/ 缺陷复盘与漏出分析</span>
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-12 gap-6 flex-1 min-h-0">
+                <div class="col-span-7 flex flex-col space-y-4">
+                    <div class="hero-card p-6 flex-1 bg-white">
+                        <div class="flex justify-between items-center mb-6">
+                            <div>
+                                <h4 class="font-bold text-slate-700 text-lg">年度缺陷深度复盘</h4>
+                                <p class="text-xs text-slate-400 mt-1">基于 429 个缺陷样本的结构化分析</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] text-slate-400 uppercase font-bold">Total Bugs</span>
+                                <p class="text-3xl font-black text-slate-800">429<span
+                                        class="text-sm font-medium ml-1 text-slate-400">个</span></p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 h-[300px]">
+                            <div class="flex flex-col">
+                                <p class="text-[11px] font-bold text-slate-500 mb-2 px-2 border-l-2 border-orange-500">
+                                    严重程度 (Severity)</p>
+                                <div id="bugSeverityChart" class="flex-1"></div>
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="text-[11px] font-bold text-slate-500 mb-2 px-2 border-l-2 border-blue-500">
+                                    问题所属 (Module)</p>
+                                <div id="bugSourceChart" class="flex-1"></div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 p-4 bg-slate-50 rounded-xl grid grid-cols-4 gap-4 text-center">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase">P2 核心占比</p>
+                                <p class="text-lg font-black text-orange-600">88.58%</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase">Server 缺陷</p>
+                                <p class="text-lg font-black text-slate-700">161个</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase">Web 缺陷</p>
+                                <p class="text-lg font-black text-slate-700">143个</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase">数据相关</p>
+                                <p class="text-lg font-black text-slate-700">44个</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 p-3 border-2 border-dashed border-slate-200 rounded-xl">
+                            <p class="text-xs text-slate-500 leading-relaxed italic text-center">XXX<br>XXX</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-5 flex flex-col space-y-4">
+                    <div class="hero-card p-6 h-fit bg-white">
+                        <h4 class="font-bold text-slate-700 mb-2 flex items-center text-sm">
+                            <i class="fas fa-chart-line mr-2 text-emerald-500"></i>线上漏出率对比 (2024 vs 2025)
+                        </h4>
+                        <div id="leakRateChart" class="w-full h-[200px]"></div>
+
+                        <div class="mt-2 mb-2 p-2 bg-emerald-50/50 rounded-lg border border-emerald-100/50">
+                            <p class="text-xs text-emerald-800 leading-relaxed text-center font-medium">XXXX<br>XXXX</p>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-50 flex justify-between items-end">
+                            <div>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase">2025 年度平均漏出率</p>
+                                <p class="text-xl font-black text-emerald-600">4.05%</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] text-slate-400 font-bold uppercase">质量目标</p>
+                                <p class="text-sm font-bold text-slate-600">↓ 稳步下降趋势</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-card p-6 flex-1 flex flex-col justify-center bg-white">
+                        <h4 class="font-bold text-slate-700 mb-2 flex items-center text-sm">
+                            <i class="fas fa-vial mr-2 text-blue-500"></i>年度测试用例资产
+                        </h4>
+                        <div class="flex items-center flex-1 min-h-0">
+                            <div id="caseChart" class="w-2/5 h-full"></div>
+                            <div class="w-3/5 grid grid-cols-1 gap-2 pl-4">
+                                <div class="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
+                                    <span class="text-[11px] text-slate-500">需求用例</span>
+                                    <span class="text-sm font-black text-blue-600">2,927</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
+                                    <span class="text-[11px] text-slate-500">基线用例</span>
+                                    <span class="text-sm font-black text-teal-600">1,935</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
+                                    <span class="text-[11px] text-slate-500">回归用例</span>
+                                    <span class="text-sm font-black text-orange-600">324</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quality-assets" class="bg-white">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-2xl font-black text-slate-800 flex items-center">
+                    <span class="w-2 h-8 mr-4 rounded-full" style="background: #a855f7;"></span>
+                    业务资产与流程建设 <span class="ml-4 text-xs font-normal text-slate-400">/ 智选保障与文档沉淀</span>
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-12 gap-6 flex-1 min-h-0">
+                <!-- 左侧：3个横向条状模块 (调整为7份) -->
+                <div class="col-span-7 flex flex-col h-full space-y-4">
+
+                    <!-- Module A: 发布流程线上化 (Expanded: Fills remaining space) -->
+                    <div
+                        class="hero-card p-0 bg-white border-l-4 border-blue-500 flex-1 overflow-hidden hover:scale-[1.002] transition-transform flex flex-col shadow-sm">
+                        <!-- Header -->
+                        <div
+                            class="px-6 py-4 border-b border-slate-50 flex justify-between items-center bg-blue-50/20 shrink-0">
+                            <div class="flex items-center">
+                                <div class="p-2 bg-blue-100 rounded-lg mr-3">
+                                    <i class="fas fa-cloud-upload-alt text-xl text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg">发布流程线上化</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">Release Process Online</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-[10px] text-slate-400 font-bold uppercase mb-0.5">喜鹊发布单</div>
+                                <div class="flex items-baseline justify-end">
+                                    <span class="text-3xl font-black text-blue-600">33</span>
+                                    <span class="text-sm text-slate-400 font-bold ml-1">个</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content: Before vs After -->
+                        <div class="flex-1 p-6 flex flex-col justify-center gap-6 overflow-y-auto">
+                            <!-- BEFORE: 痛点 -->
+                            <div class="flex flex-col">
+                                <div class="flex items-center mb-2">
+                                    <span
+                                        class="text-[11px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">BEFORE</span>
+                                    <span
+                                        class="ml-3 text-sm text-slate-600 font-medium">多分支并行开发场景下，依赖人工Checklist进行合并确认</span>
+                                </div>
+                                <div
+                                    class="flex items-center bg-slate-50 rounded-xl p-4 border border-slate-100 border-dashed relative">
+                                    <!-- Label for Context -->
+                                    <div
+                                        class="absolute -left-1 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-slate-200 rounded-r">
+                                    </div>
+
+                                    <!-- Flow Nodes -->
+                                    <div class="flex-1 flex items-center justify-between text-sm text-slate-500 px-4">
+                                        <div class="flex flex-col items-center group">
+                                            <div
+                                                class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mb-2 group-hover:bg-slate-200 transition-colors">
+                                                <i class="fas fa-code-branch text-xl text-slate-400"></i>
+                                            </div>
+                                            <span class="font-medium">多分支开发</span>
+                                        </div>
+
+                                        <div class="flex-1 h-0.5 bg-slate-200 mx-4 relative">
+                                            <i
+                                                class="fas fa-chevron-right absolute right-0 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                                        </div>
+
+                                        <div class="flex flex-col items-center group">
+                                            <div
+                                                class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mb-2 group-hover:bg-slate-200 transition-colors">
+                                                <i class="fas fa-clipboard-check text-xl text-slate-400"></i>
+                                            </div>
+                                            <span class="font-medium">人工核对</span>
+                                        </div>
+
+                                        <div class="flex-1 h-0.5 bg-slate-200 mx-4 relative">
+                                            <i
+                                                class="fas fa-chevron-right absolute right-0 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                                        </div>
+
+                                        <div class="flex flex-col items-center relative group">
+                                            <div
+                                                class="absolute -top-2 -right-2 bg-red-500 text-white w-5 h-5 rounded-full flex items-center justify-center text-xs animate-pulse">
+                                                !</div>
+                                            <div
+                                                class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center mb-2 border border-orange-100">
+                                                <i class="fas fa-exclamation-triangle text-xl text-orange-400"></i>
+                                            </div>
+                                            <span class="font-bold text-orange-500">漏合风险</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AFTER: 解决方案 -->
+                            <div class="flex flex-col">
+                                <div class="flex items-center mb-2">
+                                    <span
+                                        class="text-[11px] font-bold text-white bg-blue-500 px-2 py-0.5 rounded shadow-sm shadow-blue-200">NOW</span>
+                                    <span class="ml-3 text-sm text-slate-800 font-bold">关联喜鹊发布单，系统自动通知并追踪分支合并状态</span>
+                                </div>
+                                <div
+                                    class="flex items-center bg-blue-50/40 rounded-xl p-4 border border-blue-100 relative">
+                                    <!-- Label for Context -->
+                                    <div
+                                        class="absolute -left-1 top-1/2 -translate-y-1/2 w-1.5 h-12 bg-blue-400 rounded-r">
+                                    </div>
+
+                                    <!-- Flow Nodes -->
+                                    <div class="flex-1 flex items-center justify-between text-sm text-slate-700 px-4">
+                                        <div class="flex flex-col items-center">
+                                            <div
+                                                class="w-12 h-12 rounded-full bg-white shadow-sm border border-blue-100 flex items-center justify-center mb-2 text-blue-500">
+                                                <i class="fas fa-file-invoice text-xl"></i>
+                                            </div>
+                                            <span class="font-bold">创建发布单</span>
+                                        </div>
+
+                                        <div class="flex-1 h-0.5 bg-blue-100 mx-4 relative">
+                                            <i
+                                                class="fas fa-chevron-right absolute right-0 top-1/2 -translate-y-1/2 text-blue-300"></i>
+                                        </div>
+
+                                        <div class="flex flex-col items-center">
+                                            <div
+                                                class="w-12 h-12 rounded-full bg-white shadow-sm border border-blue-100 flex items-center justify-center mb-2 text-blue-500">
+                                                <i class="fas fa-robot text-xl"></i>
+                                            </div>
+                                            <span class="font-bold">自动关联</span>
+                                        </div>
+
+                                        <div class="flex-1 h-0.5 bg-blue-100 mx-4 relative">
+                                            <i
+                                                class="fas fa-chevron-right absolute right-0 top-1/2 -translate-y-1/2 text-blue-300"></i>
+                                        </div>
+
+                                        <div class="flex flex-col items-center">
+                                            <div
+                                                class="w-12 h-12 rounded-full bg-emerald-50 shadow-sm border border-emerald-100 flex items-center justify-center mb-2 text-emerald-500">
+                                                <i class="fas fa-check-double text-xl"></i>
+                                            </div>
+                                            <span class="font-bold text-emerald-600">状态可视</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module B: 需求吞吐量提升 (Compact: Shrink to fit content) -->
+                    <div
+                        class="hero-card p-0 bg-white border-l-4 border-orange-500 shrink-0 hover:scale-[1.002] transition-transform shadow-sm">
+                        <table class="w-full">
+                            <tr>
+                                <td class="p-4 align-middle border-r border-slate-50 w-[70%]">
+                                    <div class="flex items-center">
+                                        <div class="mr-4 p-3 bg-orange-50 rounded-xl shrink-0">
+                                            <i class="fas fa-chart-line text-2xl text-orange-500"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-slate-800 text-base mb-1">需求吞吐量提升</h4>
+                                            <p class="text-xs text-slate-500 leading-relaxed">
+                                                优化管家技术需求排期机制，全年保障 <span class="font-bold text-slate-800">11个版本</span>
+                                                高质量交付。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-3 align-middle bg-orange-50/10">
+                                    <div class="flex flex-col justify-center items-end pr-4">
+                                        <p class="text-[10px] text-slate-400 font-bold uppercase mb-1">吞吐量同比</p>
+                                        <div class="flex items-baseline">
+                                            <span class="text-3xl font-black text-orange-600">14.19</span>
+                                            <span class="text-sm text-orange-600 font-bold ml-1">%</span>
+                                            <i class="fas fa-arrow-up text-orange-500 text-xs ml-2"></i>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- 右侧：文档沉淀 (调整为5份) -->
+                <div class="col-span-5 h-full">
+                    <div class="hero-card h-full flex flex-col border-l-4 border-teal-500">
+                        <div class="p-5 bg-slate-50 border-b flex justify-between items-center shrink-0">
+                            <h4 class="font-bold text-slate-800 text-base"><i
+                                    class="fas fa-file-alt mr-2 text-teal-500"></i>核心沉淀文档 (7篇)</h4>
+                        </div>
+                        <div class="flex-1 overflow-y-auto custom-scroll flex flex-col justify-start">
+                            <div class="flex flex-col py-2">
+                                <div
+                                    class="px-6 py-4 border-b border-slate-50 hover:bg-slate-50 transition-colors flex justify-between items-center group cursor-pointer">
+                                    <span class="font-bold text-slate-700 text-sm truncate flex-1 mr-4"
+                                        title="【海雀智选】流程概述">【海雀智选】流程概述</span>
+                                    <span
+                                        class="doc-tag bg-blue-100 text-blue-600 shrink-0 text-xs px-2 py-1">业务流程</span>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-b border-slate-50 hover:bg-slate-50 transition-colors flex justify-between items-center group cursor-pointer">
+                                    <span class="font-bold text-slate-700 text-sm truncate flex-1 mr-4"
+                                        title="管家线上测试数据构造规范">线上数据构造规范</span>
+                                    <span
+                                        class="doc-tag bg-emerald-100 text-emerald-600 shrink-0 text-xs px-2 py-1">测试规范</span>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-b border-slate-50 hover:bg-slate-50 transition-colors flex justify-between items-center group cursor-pointer">
+                                    <span class="font-bold text-slate-700 text-sm truncate flex-1 mr-4"
+                                        title="使用Cursor生成测试工具">使用Cursor生成工具</span>
+                                    <span
+                                        class="doc-tag bg-amber-100 text-amber-600 shrink-0 text-xs px-2 py-1">经验分享</span>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-b border-slate-50 hover:bg-slate-50 transition-colors flex justify-between items-center group cursor-pointer">
+                                    <span class="font-bold text-slate-700 text-sm truncate flex-1 mr-4"
+                                        title="管家外呼配置流程">管家外呼配置流程</span>
+                                    <span
+                                        class="doc-tag bg-indigo-100 text-indigo-600 shrink-0 text-xs px-2 py-1">测试方法</span>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-b border-slate-50 hover:bg-slate-50 transition-colors flex justify-between items-center group cursor-pointer">
+                                    <span class="font-bold text-slate-700 text-sm truncate flex-1 mr-4"
+                                        title="管家批量获取职位链接">批量获取职位链接</span>
+                                    <span
+                                        class="doc-tag bg-purple-100 text-purple-600 shrink-0 text-xs px-2 py-1">工具介绍</span>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-b border-slate-50 hover:bg-slate-50 transition-colors flex justify-between items-center group cursor-pointer">
+                                    <span class="font-bold text-slate-700 text-sm truncate flex-1 mr-4"
+                                        title="职位详情页面二维码工具">职位详情页二维码</span>
+                                    <span
+                                        class="doc-tag bg-purple-100 text-purple-600 shrink-0 text-xs px-2 py-1">工具介绍</span>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-b border-slate-50 hover:bg-slate-50 transition-colors flex justify-between items-center group cursor-pointer">
+                                    <span class="font-bold text-slate-700 text-sm truncate flex-1 mr-4"
+                                        title="管家历史遗留问题整理">历史遗留问题整理</span>
+                                    <span
+                                        class="doc-tag bg-slate-100 text-slate-600 shrink-0 text-xs px-2 py-1">测试梳理</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="special" class="flex flex-col relative overflow-hidden">
+            <!-- 标题 -->
+            <div class="mb-8 shrink-0 relative z-10">
+                <h2 class="text-3xl font-black text-slate-800 tracking-tight">业务专项建设</h2>
+                <div class="h-1 w-16 bg-gradient-to-r from-purple-500 to-indigo-500 mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-6 flex-1 min-h-0">
+                <!-- 左侧：AI智能测试 (Process + Data) -->
+                <div class="col-span-8 flex flex-col h-full">
+                    <div
+                        class="hero-card h-full bg-white flex flex-col overflow-hidden relative border-t-4 border-indigo-500">
+                        <!-- Header -->
+                        <div class="p-6 border-b border-slate-50 flex justify-between items-center bg-indigo-50/10">
+                            <div class="flex items-center">
+                                <div class="p-2.5 bg-indigo-100/50 rounded-xl mr-4 text-indigo-600">
+                                    <i class="fas fa-brain text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-800 text-xl">AI生成测试用例</h3>
+                                    <p class="text-sm text-slate-500 mt-1">AI-Driven Testing Framework</p>
+                                </div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <div class="px-3 py-1 bg-indigo-50 rounded-lg text-center">
+                                    <div class="text-[10px] text-slate-400 font-bold uppercase">AI Case占比</div>
+                                    <div class="text-xl font-black text-indigo-600">90.4%</div>
+                                </div>
+                                <div class="px-3 py-1 bg-emerald-50 rounded-lg text-center">
+                                    <div class="text-[10px] text-slate-400 font-bold uppercase">有效性</div>
+                                    <div class="text-xl font-black text-emerald-600">~75%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 flex flex-col p-6 min-h-0 overflow-y-auto">
+                            <!-- Part 1: Process Flow (Standard 9-Step) -->
+                            <div class="mb-6">
+                                <h4 class="text-sm font-bold text-slate-700 mb-4 flex items-center">
+                                    <i class="fas fa-sitemap mr-2 text-indigo-400"></i>AI用例生成标准化流程 (Standard SOP)
+                                </h4>
+                                <div
+                                    class="bg-slate-50 rounded-2xl p-6 border border-slate-100 overflow-x-auto custom-scroll">
+                                    <div class="flex items-center justify-between min-w-[950px]">
+                                        <!-- Step 1: Input (User) -->
+                                        <div class="flow-step group relative text-center">
+                                            <div
+                                                class="w-10 h-10 mx-auto bg-white border-2 border-emerald-200 rounded-lg flex items-center justify-center text-emerald-500 shadow-sm mb-2 relative z-10 group-hover:scale-110 transition-transform">
+                                                <i class="fas fa-file-upload"></i>
+                                                <span
+                                                    class="absolute -top-2 -right-2 bg-emerald-500 text-white text-[9px] px-1 py-0.5 rounded-full scale-75">人工</span>
+                                            </div>
+                                            <span
+                                                class="text-[10px] font-bold text-slate-600 block w-16">规则/PRD<br>输入</span>
+                                        </div>
+                                        <div class="flex-1 h-0.5 bg-slate-200 mx-1.5 relative top-[-14px]"></div>
+
+                                        <!-- Step 2: Review (AI) -->
+                                        <div class="flow-step group relative text-center">
+                                            <div
+                                                class="w-10 h-10 mx-auto bg-white border-2 border-indigo-200 rounded-lg flex items-center justify-center text-indigo-500 shadow-sm mb-2 relative z-10 group-hover:scale-110 transition-transform">
+                                                <i class="fas fa-robot"></i>
+                                                <span
+                                                    class="absolute -top-2 -right-2 bg-indigo-600 text-white text-[9px] px-1 py-0.5 rounded-full scale-75">AI</span>
+                                            </div>
+                                            <span class="text-[10px] font-bold text-slate-600 block w-16">需求评审</span>
+                                        </div>
+                                        <div class="flex-1 h-0.5 bg-indigo-100 mx-1.5 relative top-[-14px]"></div>
+
+                                        <!-- Step 3: Issue Confirm (User) -->
+                                        <div class="flow-step group relative text-center">
+                                            <div
+                                                class="w-10 h-10 mx-auto bg-white border-2 border-emerald-200 rounded-lg flex items-center justify-center text-emerald-500 shadow-sm mb-2 relative z-10 group-hover:scale-110 transition-transform">
+                                                <i class="fas fa-check-double"></i>
+                                                <span
+                                                    class="absolute -top-2 -right-2 bg-emerald-500 text-white text-[9px] px-1 py-0.5 rounded-full scale-75">人工</span>
+                                            </div>
+                                            <span class="text-[10px] font-bold text-slate-600 block w-16">问题确认</span>
+                                        </div>
+                                        <div class="flex-1 h-0.5 bg-slate-200 mx-1.5 relative top-[-14px]"></div>
+
+                                        <!-- Step 4: Module Partition (AI) -->
+                                        <div class="flow-step group relative text-center">
+                                            <div
+                                                class="w-10 h-10 mx-auto bg-white border-2 border-indigo-200 rounded-lg flex items-center justify-center text-indigo-500 shadow-sm mb-2 relative z-10 group-hover:scale-110 transition-transform">
+                                                <i class="fas fa-cubes"></i>
+                                                <span
+                                                    class="absolute -top-2 -right-2 bg-indigo-600 text-white text-[9px] px-1 py-0.5 rounded-full scale-75">AI</span>
+                                            </div>
+                                            <span class="text-[10px] font-bold text-slate-600 block w-16">模块划分</span>
+                                        </div>
+                                        <div class="flex-1 h-0.5 bg-indigo-100 mx-1.5 relative top-[-14px]"></div>
+
+                                        <!-- Step 5: Confirm & Supplement (User) -->
+                                        <div class="flow-step group relative text-center">
+                                            <div
+                                                class="w-10 h-10 mx-auto bg-white border-2 border-emerald-200 rounded-lg flex items-center justify-center text-emerald-500 shadow-sm mb-2 relative z-10 group-hover:scale-110 transition-transform">
+                                                <i class="fas fa-edit"></i>
+                                                <span
+                                                    class="absolute -top-2 -right-2 bg-emerald-500 text-white text-[9px] px-1 py-0.5 rounded-full scale-75">人工</span>
+                                            </div>
+                                            <span class="text-[10px] font-bold text-slate-600 block w-16">确认&补充</span>
+                                        </div>
+                                        <div class="flex-1 h-0.5 bg-slate-200 mx-1.5 relative top-[-14px]"></div>
+
+                                        <!-- Step 6: Review Docs (AI) -->
+                                        <div class="flow-step group relative text-center">
+                                            <div
+                                                class="w-10 h-10 mx-auto bg-white border-2 border-indigo-200 rounded-lg flex items-center justify-center text-indigo-500 shadow-sm mb-2 relative z-10 group-hover:scale-110 transition-transform">
+                                                <i class="fas fa-file-alt"></i>
+                                                <span
+                                                    class="absolute -top-2 -right-2 bg-indigo-600 text-white text-[9px] px-1 py-0.5 rounded-full scale-75">AI</span>
+                                            </div>
+                                            <span class="text-[10px] font-bold text-slate-600 block w-16">评审文档</span>
+                                        </div>
+                                        <div class="flex-1 h-0.5 bg-indigo-100 mx-1.5 relative top-[-14px]"></div>
+
+                                        <!-- Step 7: Check Supplement (User) -->
+                                        <div class="flow-step group relative text-center">
+                                            <div
+                                                class="w-10 h-10 mx-auto bg-white border-2 border-emerald-200 rounded-lg flex items-center justify-center text-emerald-500 shadow-sm mb-2 relative z-10 group-hover:scale-110 transition-transform">
+                                                <i class="fas fa-glasses"></i>
+                                                <span
+                                                    class="absolute -top-2 -right-2 bg-emerald-500 text-white text-[9px] px-1 py-0.5 rounded-full scale-75">人工</span>
+                                            </div>
+                                            <span class="text-[10px] font-bold text-slate-600 block w-16">检查补充</span>
+                                        </div>
+                                        <div class="flex-1 h-0.5 bg-slate-200 mx-1.5 relative top-[-14px]"></div>
+
+                                        <!-- Step 8: Rules Input (User) -->
+                                        <div class="flow-step group relative text-center">
+                                            <div
+                                                class="w-10 h-10 mx-auto bg-white border-2 border-emerald-200 rounded-lg flex items-center justify-center text-emerald-500 shadow-sm mb-2 relative z-10 group-hover:scale-110 transition-transform">
+                                                <i class="fas fa-sliders-h"></i>
+                                                <span
+                                                    class="absolute -top-2 -right-2 bg-emerald-500 text-white text-[9px] px-1 py-0.5 rounded-full scale-75">人工</span>
+                                            </div>
+                                            <span class="text-[10px] font-bold text-slate-600 block w-16">规则输入</span>
+                                        </div>
+                                        <div class="flex-1 h-0.5 bg-slate-200 mx-1.5 relative top-[-14px]"></div>
+
+                                        <!-- Step 9: Generate (AI) -->
+                                        <div class="flow-step group relative text-center">
+                                            <div
+                                                class="w-10 h-10 mx-auto bg-indigo-500 border-2 border-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-indigo-200 mb-2 relative z-10 scale-110">
+                                                <i class="fas fa-magic"></i>
+                                            </div>
+                                            <span class="text-[10px] font-black text-indigo-600 block w-16">生成用例</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Part 2: Charts -->
+                            <div class="flex-1 min-h-0 flex flex-col">
+                                <h4 class="text-sm font-bold text-slate-700 mb-2 flex items-center">
+                                    <i class="fas fa-chart-bar mr-2 text-indigo-400"></i>效能趋势 · 2025
+                                </h4>
+                                <div id="aiTrendChart"
+                                    class="flex-1 w-full bg-slate-50 rounded-2xl border border-slate-100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧：接口自动化 & 效率 (Cols 4) -->
+                <div class="col-span-4 flex flex-col space-y-6 h-full">
+                    <!-- Card 1: 接口自动化 -->
+                    <div
+                        class="hero-card bg-white flex flex-col p-6 border-l-4 border-purple-500 h-1/2 justify-between group hover:scale-[1.01] transition-transform">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-1">接口自动化专项</h3>
+                                <p class="text-xs text-slate-400">Interface Automation</p>
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600">
+                                <i class="fas fa-network-wired text-xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-end mt-4">
+                            <div class="space-y-2">
+                                <div class="flex items-center text-sm text-slate-600">
+                                    <span class="w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
+                                    新增接口: <span class="font-bold text-slate-800 ml-1">28</span>
+                                </div>
+                                <div class="flex items-center text-sm text-slate-600">
+                                    <span class="w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
+                                    新增用例: <span class="font-bold text-slate-800 ml-1">77</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-4xl font-black text-purple-600 tracking-tighter">100<span
+                                        class="text-lg ml-1">%</span></div>
+                                <div class="text-[10px] font-bold text-purple-400 uppercase mt-1">核心P0覆盖率</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: 效率 (AI扩展) -->
+                    <div
+                        class="hero-card bg-white flex flex-col p-6 border-l-4 border-amber-500 h-1/2 justify-between group hover:scale-[1.01] transition-transform">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-1">AI 扩展用例</h3>
+                                <p class="text-xs text-slate-400">Efficiency Boost</p>
+                            </div>
+                            <div
+                                class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600">
+                                <i class="fas fa-bolt text-xl"></i>
+                            </div>
+                        </div>
+
+                        <!-- 4-Step Extension Flow -->
+                        <div class="mt-2 flex-1 flex flex-col justify-center">
+                            <div class="flex items-center justify-between">
+                                <div class="text-center">
+                                    <div
+                                        class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-amber-500 text-xs mb-1 border border-amber-100">
+                                        <i class="fas fa-keyboard"></i>
+                                    </div>
+                                    <div class="text-[9px] text-slate-500 scale-90">需求输入</div>
+                                </div>
+                                <i class="fas fa-angle-right text-slate-200 text-xs"></i>
+                                <div class="text-center">
+                                    <div
+                                        class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-amber-500 text-xs mb-1 border border-amber-100">
+                                        <i class="fas fa-heading"></i>
+                                    </div>
+                                    <div class="text-[9px] text-slate-500 scale-90">用例简述</div>
+                                </div>
+                                <i class="fas fa-angle-right text-slate-200 text-xs"></i>
+                                <div class="text-center">
+                                    <div
+                                        class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-amber-500 text-xs mb-1 border border-amber-100">
+                                        <i class="fas fa-list-ul"></i>
+                                    </div>
+                                    <div class="text-[9px] text-slate-500 scale-90">规则输入</div>
+                                </div>
+                                <i class="fas fa-angle-right text-slate-200 text-xs"></i>
+                                <div class="text-center">
+                                    <div
+                                        class="w-8 h-8 mx-auto bg-amber-500 rounded-full flex items-center justify-center text-white text-xs mb-1 shadow-sm">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                    <div class="text-[9px] font-bold text-amber-600 scale-90">生成</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-2 mt-2 pt-2 border-t border-slate-50">
+                            <span
+                                class="px-2 py-1 bg-amber-100 text-amber-700 text-[10px] font-bold rounded">效率提升</span>
+                            <span
+                                class="px-2 py-1 bg-amber-100 text-amber-700 text-[10px] font-bold rounded">思维拓展</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="tools" class="flex flex-col relative overflow-hidden">
+            <!-- 标题 -->
+            <div class="mb-8 shrink-0 relative z-10">
+                <h2 class="text-3xl font-black text-slate-800 tracking-tight">提效工具开发</h2>
+                <div class="h-1 w-16 bg-gradient-to-r from-amber-500 to-orange-500 mt-3 rounded-full"></div>
+            </div>
+
+            <div class="flex-1 flex flex-col gap-6 min-h-0">
+                <!-- Row 1: 明星工具 (Spotlight) -->
+                <div class="flex-[3] grid grid-cols-2 gap-6 min-h-0">
+                    <!-- Tool A: 职位链接生成 -->
+                    <div
+                        class="hero-card bg-white flex flex-col relative overflow-hidden group border-t-4 border-orange-500 hover:shadow-lg transition-all">
+                        <div class="absolute top-0 right-0 p-2">
+                            <i
+                                class="fas fa-qrcode text-orange-100 text-6xl opacity-20 transform -rotate-12 group-hover:scale-110 transition-transform"></i>
+                        </div>
+
+                        <!-- Header -->
+                        <div class="p-6 pb-2 relative z-10">
+                            <div class="flex items-center mb-2">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 shadow-sm mr-3">
+                                    <i class="fas fa-link text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-800">职位详情链接生成</h3>
+                            </div>
+
+                            <!-- Pain Points -->
+                            <div class="mb-2">
+                                <div class="text-xs text-red-500 font-bold mb-1 flex items-center">
+                                    <i class="fas fa-exclamation-circle mr-1"></i>原有痛点:
+                                </div>
+                                <div class="grid grid-cols-3 gap-1">
+                                    <div class="bg-red-50 px-2 py-1 rounded border border-red-100 text-[11px] text-red-600 truncate"
+                                        title="需要管家系统&测试平台权限">
+                                        1. 依赖多平台权限
+                                    </div>
+                                    <div class="bg-red-50 px-2 py-1 rounded border border-red-100 text-[11px] text-red-600 truncate"
+                                        title="跨平台操作，比较麻烦">
+                                        2. 跨平台操作繁琐
+                                    </div>
+                                    <div class="bg-red-50 px-2 py-1 rounded border border-red-100 text-[11px] text-red-600 truncate"
+                                        title="对于产品和运营来说，有一定的技术成本">
+                                        3. 存在技术门槛
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm font-medium text-slate-600">解决方案：一键查询职位并生成扫码可用的端上协议链接。</p>
+                        </div>
+
+                        <!-- Carousel Visual Area -->
+                        <div class="flex-1 px-6 py-2 relative group/carousel" id="carousel-link">
+                            <div
+                                class="w-full h-full bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl relative overflow-hidden">
+                                <!-- Slide 1: Search Info -->
+                                <div class="carousel-slide absolute inset-0 flex flex-col items-center justify-center text-slate-400 transition-opacity duration-300 opacity-100 z-10 bg-white"
+                                    data-index="0">
+                                    <img src="assets/job_step1.png" class="w-full h-full object-contain"
+                                        alt="Search Info">
+                                    <span
+                                        class="absolute bottom-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded">1.
+                                        查询职位信息</span>
+                                </div>
+                                <!-- Slide 2: QR Input -->
+                                <div class="carousel-slide absolute inset-0 flex flex-col items-center justify-center text-slate-400 transition-opacity duration-300 opacity-0 z-0 bg-white"
+                                    data-index="1">
+                                    <img src="assets/job_step2.png" class="w-full h-full object-contain" alt="QR Input">
+                                    <span
+                                        class="absolute bottom-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded">2.
+                                        输入生成二维码</span>
+                                </div>
+                                <!-- Slide 3: 4 Options -->
+                                <div class="carousel-slide absolute inset-0 flex flex-col items-center justify-center text-slate-400 transition-opacity duration-300 opacity-0 z-0 bg-white"
+                                    data-index="2">
+                                    <img src="assets/job_step3.png" class="w-full h-full object-contain"
+                                        alt="4 Options">
+                                    <span
+                                        class="absolute bottom-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded">3.
+                                        输入四个选项</span>
+                                </div>
+                                <!-- Slide 4: One Click -->
+                                <div class="carousel-slide absolute inset-0 flex flex-col items-center justify-center text-slate-400 transition-opacity duration-300 opacity-0 z-0 bg-white"
+                                    data-index="3">
+                                    <img src="assets/job_step4.png" class="w-full h-full object-contain"
+                                        alt="One Click">
+                                    <span
+                                        class="absolute bottom-2 right-2 bg-black/50 text-white text-[10px] px-2 py-1 rounded">4.
+                                        现在的工具一键生成</span>
+                                </div>
+                            </div>
+
+                            <!-- Dots -->
+                            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-20">
+                                <button class="w-1.5 h-1.5 rounded-full bg-slate-800 transition-colors carousel-dot"
+                                    onclick="switchSlide('carousel-link', 0)"></button>
+                                <button
+                                    class="w-1.5 h-1.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-colors carousel-dot"
+                                    onclick="switchSlide('carousel-link', 1)"></button>
+                                <button
+                                    class="w-1.5 h-1.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-colors carousel-dot"
+                                    onclick="switchSlide('carousel-link', 2)"></button>
+                                <button
+                                    class="w-1.5 h-1.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-colors carousel-dot"
+                                    onclick="switchSlide('carousel-link', 3)"></button>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div
+                            class="p-4 bg-orange-50/30 border-t border-orange-50 flex items-center justify-between relative z-10">
+                            <div class="flex items-center text-xs font-bold text-orange-600">
+                                <i class="fas fa-check-circle mr-1.5"></i>
+                                <span>数据关联 "零" 成本</span>
+                            </div>
+                            <i
+                                class="fas fa-arrow-right text-orange-300 group-hover:text-orange-500 transition-colors"></i>
+                        </div>
+                    </div>
+
+                    <!-- Tool B: 一键开聊 -->
+                    <div
+                        class="hero-card bg-white flex flex-col relative overflow-hidden group border-t-4 border-amber-500 hover:shadow-lg transition-all">
+                        <div class="absolute top-0 right-0 p-2">
+                            <i
+                                class="fas fa-star text-amber-100 text-6xl opacity-20 transform rotate-12 group-hover:scale-110 transition-transform"></i>
+                        </div>
+
+                        <!-- Header -->
+                        <div class="p-6 pb-2 relative z-10">
+                            <div class="flex items-center mb-2">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 shadow-sm mr-3">
+                                    <i class="fas fa-comments text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-800">一键开聊工具</h3>
+                            </div>
+                            <p class="text-base text-slate-600 mt-1 line-clamp-2">解决繁琐的手动建联流程，输入项目单与手机号即可自动完成开聊。</p>
+                        </div>
+
+                        <!-- Visual Area (Static Image) -->
+                        <div class="flex-1 px-6 py-2 relative">
+                            <div
+                                class="w-full h-full bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl relative overflow-hidden">
+                                <img src="assets/chat_tool_full.png" class="w-full h-full object-contain"
+                                    alt="One Click Chat Demo">
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div
+                            class="p-4 bg-amber-50/30 border-t border-amber-50 flex items-center justify-between relative z-10">
+                            <div class="flex items-center text-xs font-bold text-amber-600">
+                                <i class="fas fa-bolt mr-1.5"></i>
+                                <span>单次操作节省 3-5 分钟</span>
+                            </div>
+                            <i
+                                class="fas fa-arrow-right text-amber-300 group-hover:text-amber-500 transition-colors"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: 通用工具 (Utility - Compacted) -->
+                <div class="flex-[0.6] grid grid-cols-2 gap-6 min-h-0">
+                    <!-- Tool C: 开聊详情查询 -->
+                    <div
+                        class="hero-card bg-white p-5 flex flex-col justify-center relative overflow-hidden group hover:bg-slate-50/50 transition-colors border-l-4 border-indigo-400">
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-500 flex items-center justify-center text-lg mr-4 shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-slate-800 mb-0.5">开聊详情查询工具</h4>
+                                <p class="text-[11px] text-slate-500 leading-tight mb-2">使用 ChatClueId
+                                    一键查询项目单、Boss等全链路信息。</p>
+                                <div
+                                    class="inline-flex items-center px-1.5 py-0.5 bg-slate-100 rounded text-[9px] text-slate-500 font-mono">
+                                    <i class="fas fa-terminal mr-1 text-slate-400"></i>ID Query
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tool D: 管家加解密 -->
+                    <div
+                        class="hero-card bg-white p-5 flex flex-col justify-center relative overflow-hidden group hover:bg-slate-50/50 transition-colors border-l-4 border-slate-400">
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center text-lg mr-4 shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-lock-open"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-slate-800 mb-0.5">管家加解密工具</h4>
+                                <p class="text-[11px] text-slate-500 leading-tight mb-2">集成常用加解密算法，支持一键处理，提升排查效率。</p>
+                                <div
+                                    class="inline-flex items-center px-1.5 py-0.5 bg-slate-100 rounded text-[9px] text-slate-500 font-mono">
+                                    <i class="fas fa-key mr-1 text-slate-400"></i>AES/Base64
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="future" class="flex flex-col relative overflow-hidden bg-slate-50">
+            <!-- 标题 -->
+            <div class="mb-2 shrink-0 relative z-10 w-full flex justify-between items-end">
+                <div>
+                    <h2 class="text-3xl font-black text-slate-800 tracking-tight">未来规划 (2026)</h2>
+                    <div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-indigo-600 mt-3 rounded-full"></div>
+                </div>
+                <!-- Decor -->
+                <div class="text-slate-300 text-6xl opacity-20 absolute right-0 top-0 pointer-events-none">
+                    <i class="fas fa-rocket transform -rotate-45"></i>
+                </div>
+            </div>
+
+            <div class="flex-1 min-h-0 relative z-10 flex flex-col justify-center py-4">
+                <!-- Background Wave SVG -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none -z-10" viewBox="0 0 1200 400"
+                    preserveAspectRatio="none">
+                    <path d="M0,350 C300,350 300,200 600,200 C900,200 900,50 1200,50" fill="none" stroke="#cbd5e1"
+                        stroke-width="4" stroke-dasharray="10 10" class="opacity-30" />
+                    <!-- Dots on the path -->
+                    <circle cx="200" cy="350" r="8" fill="#cbd5e1" class="opacity-50" />
+                    <circle cx="600" cy="200" r="8" fill="#cbd5e1" class="opacity-50" />
+                    <circle cx="1000" cy="50" r="8" fill="#cbd5e1" class="opacity-50" />
+                </svg>
+
+                <div class="grid grid-cols-3 gap-8 h-[400px] items-center">
+
+                    <!-- Step 1: Base (Quality) -->
+                    <div
+                        class="hero-card bg-white p-6 border-t-8 border-cyan-500 shadow-xl hover:-translate-y-2 transition-transform self-end mb-8 relative group h-[260px] flex flex-col !overflow-visible">
+                        <div
+                            class="absolute -top-6 left-6 w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center text-cyan-600 shadow-sm group-hover:scale-110 transition-transform border-4 border-white">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <div class="mt-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-black text-slate-800">质量与流程夯实</h3>
+                            <p class="text-[11px] font-bold text-cyan-500 uppercase tracking-widest mt-1">Foundational
+                                Stability</p>
+
+                            <ul class="mt-5 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2.5 text-sm"></i>
+                                    <div>
+                                        <div class="text-sm font-bold text-slate-700">业务稳定性治理</div>
+                                        <p class="text-xs text-slate-500 mt-0.5">聚焦核心业务，0 故障保障</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-cyan-500 mt-1 mr-2.5 text-sm"></i>
+                                    <div>
+                                        <div class="text-sm font-bold text-slate-700">流程持续优化</div>
+                                        <p class="text-xs text-slate-500 mt-0.5">标准化研发全链路SOP</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="text-[100px] font-black text-slate-100 absolute -bottom-5 -right-5 -z-10 select-none">
+                            01</div>
+                    </div>
+
+                    <!-- Step 2: AI (Growth) -->
+                    <div
+                        class="hero-card bg-white p-6 border-t-8 border-indigo-500 shadow-xl hover:-translate-y-2 transition-transform self-center relative group h-[260px] flex flex-col !overflow-visible">
+                        <div
+                            class="absolute -top-6 left-6 w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 shadow-sm group-hover:scale-110 transition-transform border-4 border-white">
+                            <i class="fas fa-brain text-2xl"></i>
+                        </div>
+                        <div class="mt-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-black text-slate-800">AI 智能化赋能</h3>
+                            <p class="text-[11px] font-bold text-indigo-500 uppercase tracking-widest mt-1">AI-Driven
+                                Evolution</p>
+
+                            <ul class="mt-5 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-indigo-500 mt-1 mr-2.5 text-sm"></i>
+                                    <div>
+                                        <div class="text-sm font-bold text-slate-700">智能缺陷分析</div>
+                                        <p class="text-xs text-slate-500 mt-0.5">AI辅助归因与精准复盘</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-star text-indigo-500 mt-1 mr-2.5 text-sm"></i>
+                                    <div>
+                                        <div class="text-sm font-bold text-slate-700">资产智能沉淀</div>
+                                        <p class="text-xs text-slate-500 mt-0.5">文档/用例自动生成与归纳</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="text-[100px] font-black text-slate-100 absolute -bottom-5 -right-5 -z-10 select-none">
+                            02</div>
+                    </div>
+
+                    <!-- Step 3: MCP (Peak) -->
+                    <div
+                        class="hero-card bg-white p-6 border-t-8 border-amber-500 shadow-xl hover:-translate-y-2 transition-transform self-start mt-8 relative group h-[260px] flex flex-col !overflow-visible">
+                        <div
+                            class="absolute -top-6 left-6 w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 shadow-sm group-hover:scale-110 transition-transform border-4 border-white">
+                            <i class="fas fa-plug text-2xl"></i>
+                        </div>
+                        <div class="mt-8 flex-1 flex flex-col">
+                            <h3 class="text-xl font-black text-slate-800">工具链与 MCP 集成</h3>
+                            <p class="text-[11px] font-bold text-amber-500 uppercase tracking-widest mt-1">Next-Gen
+                                Agentic Tools</p>
+
+                            <ul class="mt-5 space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-rocket text-amber-500 mt-1 mr-2.5 text-sm"></i>
+                                    <div>
+                                        <div class="text-sm font-bold text-slate-700">提效工具升级</div>
+                                        <p class="text-xs text-slate-500 mt-0.5">结合业务痛点深度定制</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-rocket text-amber-500 mt-1 mr-2.5 text-sm"></i>
+                                    <div>
+                                        <div class="text-sm font-bold text-slate-700">集成管家 MCP</div>
+                                        <p class="text-xs text-slate-500 mt-0.5">打造测试 Agent 超级助手</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="text-[100px] font-black text-slate-100 absolute -bottom-5 -right-5 -z-10 select-none">
+                            03</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <section id="summary"
+            class="bg-slate-900 text-white min-h-screen flex flex-col justify-center p-12 relative overflow-hidden">
+            <!-- Background Texture -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none"
+                style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px;">
+            </div>
+
+            <h2 class="text-4xl font-black text-center mb-12 tracking-tight relative z-10">2025 年度核心回顾 <span
+                    class="text-slate-500 text-2xl font-light ml-2">Summary</span></h2>
+
+            <div class="max-w-6xl mx-auto w-full h-[600px] grid grid-cols-4 grid-rows-3 gap-5 relative z-10">
+                <!-- 1. 漏出率 (2x2) - Green -->
+                <div
+                    class="col-span-2 row-span-2 bg-emerald-500 rounded-[2rem] p-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-20 transform rotate-12 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-9xl text-white"></i>
+                    </div>
+                    <div class="flex flex-col h-full justify-between relative z-10">
+                        <div>
+                            <p class="text-emerald-100 font-bold uppercase tracking-widest text-sm">质量核心指标</p>
+                            <h3 class="text-3xl font-black mt-2">线上漏出率大幅下降</h3>
+                        </div>
+                        <div>
+                            <div class="flex items-baseline">
+                                <span class="text-8xl font-black tracking-tighter">4.05</span>
+                                <span class="text-3xl font-bold ml-2">%</span>
+                            </div>
+                            <div
+                                class="mt-2 inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-bold">
+                                ↓ 同比下降 27.27%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. AI Tech (1x2) - Indigo -->
+                <div
+                    class="col-span-1 row-span-2 bg-indigo-600 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="absolute -bottom-4 -right-4 text-indigo-400 opacity-20">
+                        <i class="fas fa-brain text-[10rem]"></i>
+                    </div>
+                    <div class="flex flex-col h-full relative z-10">
+                        <div
+                            class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4 backdrop-blur-sm">
+                            <i class="fas fa-magic text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-black mb-2">AI 智能化</h3>
+                        <p class="text-indigo-200 text-sm leading-relaxed mb-8">AI 赋能测试全流程，从用例生成到缺陷分析。</p>
+                        <div class="mt-auto">
+                            <p class="text-xs text-indigo-300 uppercase font-bold">AI Case 占比</p>
+                            <p class="text-5xl font-black">90.4%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Tools (1x1) - Orange -->
+                <div
+                    class="col-span-1 row-span-1 bg-orange-500 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="flex flex-col h-full justify-between">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-black">自研提效工具</h3>
+                            <i class="fas fa-tools text-orange-200 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-5xl font-black">4</span> <span class="font-bold text-orange-200">款</span>
+                            <p class="text-xs text-orange-100 mt-1 opacity-80">覆盖造数/配置/加解密</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Assets (1x1) - Blue -->
+                <div
+                    class="col-span-1 row-span-1 bg-blue-500 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="flex flex-col h-full justify-between">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-black">用例资产</h3>
+                            <i class="fas fa-cube text-blue-200 text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-4xl font-black">5000+</span>
+                            <p class="text-xs text-blue-100 mt-1 opacity-80">结构化用例沉淀</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Future/MCP (2x1) - Dark Slate -->
+                <div
+                    class="col-span-2 row-span-1 bg-slate-800 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 border border-slate-700">
+                    <div class="flex items-center h-full">
+                        <div
+                            class="mr-6 shrink-0 w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-rocket text-3xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-amber-500 font-bold text-xs uppercase tracking-widest mb-1">Next Step</p>
+                            <h3 class="text-2xl font-black text-white">集成管家 MCP</h3>
+                            <p class="text-slate-400 text-sm mt-1">打造下一代 Agentic Testing Assistant</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Zero Faults (1x1) - Purple -->
+                <div
+                    class="col-span-1 row-span-1 bg-purple-500 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                    <div class="flex flex-col h-full justify-center text-center">
+                        <p class="text-purple-200 font-bold uppercase text-xs">线上 P0/P1</p>
+                        <p class="text-6xl font-black my-1">0</p>
+                        <p class="text-white font-bold text-sm">全年无重大故障</p>
+                    </div>
+                </div>
+
+                <!-- 7. Thank You (1x1) - White -->
+                <div
+                    class="col-span-1 row-span-1 bg-white text-slate-900 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="inline-block p-3 bg-red-50 rounded-full text-red-500 mb-2">
+                            <i class="fas fa-heart text-2xl animate-pulse"></i>
+                        </div>
+                        <h3 class="text-xl font-black">Thank You</h3>
+                        <p class="text-xs text-slate-400 mt-1">请批评指正</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+    </main>
+
+    <script>
+        const quarterData = {
+            1: { total: 25, ver: 12, nonVer: 11, tech: 2, focus: ["业务拓展：海螺智选V1.0", "客户线索：线索质量提升"], versions: [{ name: "V5.0", items: ["轻交付智能助理完善及约面采集增加身份校验", "业务主体迁移至米卡阿文", "海螺高选约面支持劳务接站地址和发布图文职位", "线索质量提升-算法圈选潜客+KP&代招标签迁移", "财务对账线上化特殊场景完善", "BOSS管家-经纪人端系统升级"] }, { name: "V5.1", items: ["安心保&海螺高选JD页优化", "海螺智选V1.0", "【经纪人端】新增聊天敏感词业务库和提示", "鸿蒙安心保&海螺高选-鸿蒙系统兼容独立业务卡片", "智能助理配置场景完善", "【经纪人端】项目单筛选优化"] }] },
+            2: { total: 49, ver: 24, nonVer: 20, tech: 5, focus: ["海雀智选：智选标准版、智选订单线上核销、B端招募"], versions: [{ name: "V5.1", items: ["开聊线索分配优化（三期）", "企业微信功能兼容-需求完善", "电话达成支持多号码调用"] }, { name: "V5.2", items: ["海螺智选订单核销整体流程线上化", "海螺智选-智能助理沟通策略优化", "海螺智选-AI项目单知识库", "海螺智选-完善B(客户)端使用体验", "项目单支持多城多地址招聘"] }, { name: "V5.3", items: ["海雀智选发布职位自动匹配职位地址", "海雀智选意向采集增加系统初审", "海雀智选模型badcase线上化管理"] }, { name: "V5.4", items: ["海雀智选标准版", "海雀智选信息采集字段免填写", "海雀智选卡支持在线充值", "【海雀智选】强化求职者投递感知", "海雀智选-B端客户招募"] }] },
+            3: { total: 56, ver: 16, nonVer: 24, tech: 16, focus: ["海雀智选：智选企微版、特征信息推送", "AI开聊：AI音视频审核、AI转推荐、AI追聊"], versions: [{ name: "V5.5", items: ["海雀智选接入一键报名", "辅助AI识别区分系统开场语&行业知识库", "智选卡余额不足提醒", "【智选标准版】建联率提升-支持B向C下发建联通知", "B端账号增加智选版本权限管理"] }, { name: "V5.6", items: ["【智选B端】基础特征信息推送优化", "音视频AI审核超时兜底策略", "牛人不合适和无意向场景增加转项目推荐", "智能助理隐藏转人工入口", "【智选-流量调控】预期线索上限配置（开关单）"] }, { name: "V5.7", items: ["海雀智选-职位标签优化", "海雀智选追聊场景梳理及优化", "企微版一键报名", "AI-badcase迭代管理优化", "线索认领优化", "海雀智选企微版"] }] },
+            4: { total: 35, ver: 13, nonVer: 8, tech: 14, focus: ["海雀智选：主播特征对接、职位自动清洗", "运营提效：虚拟账号接入、项目单提效"], versions: [{ name: "V5.8", items: ["admin意向推荐数据经纪人字段读取逻辑优化", "意向推荐列表新增牛人昵称和开聊ID字段", "海雀智选发布职位账号接入虚拟账号", "主播特征对接智选", "企微版转项目推荐&画像候选人二次转项目推荐"] }, { name: "V5.9", items: ["BOSS管家-项目单提效", "自动生成职位发布方案", "项目重启积压采集召回推荐&人工自动推荐增加AI审核", "一键报名线索提效优化"] }, { name: "V6.0", items: ["海雀智选牛人投诉自动化归类总结", "职位自动清洗和补发", "【海雀智选】职位标题与标签词去重优化", "badcase高阶模型交叉训练处理"] }] }
+        };
+
+        function initQualityCharts() {
+            const severityChart = echarts.init(document.getElementById('bugSeverityChart'));
+            severityChart.setOption({
+                tooltip: { trigger: 'item' },
+                series: [{ type: 'pie', radius: ['40%', '70%'], avoidLabelOverlap: false, itemStyle: { borderRadius: 6, borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '{b}\n{d}%', fontSize: 10 }, data: [{ value: 380, name: 'P2-一般', itemStyle: { color: '#f59e0b' } }, { value: 47, name: 'P3-较小', itemStyle: { color: '#3b82f6' } }, { value: 2, name: 'P4-轻微', itemStyle: { color: '#94a3b8' } }] }]
+            });
+
+            const sourceChart = echarts.init(document.getElementById('bugSourceChart'));
+            sourceChart.setOption({
+                tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+                grid: { left: '3%', right: '10%', bottom: '3%', top: '5%', containLabel: true },
+                xAxis: { type: 'value', splitLine: { show: false } },
+                yAxis: { type: 'category', data: ['Server', 'Web', '产品', '数据', '其他'], axisLine: { show: false }, axisTick: { show: false } },
+                series: [{ name: '缺陷数量', type: 'bar', data: [161, 143, 70, 44, 11], itemStyle: { color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{ offset: 0, color: '#3b82f6' }, { offset: 1, color: '#60a5fa' }]), borderRadius: [0, 4, 4, 0] }, label: { show: true, position: 'right' } }]
+            });
+
+            const leakChart = echarts.init(document.getElementById('leakRateChart'));
+            leakChart.setOption({
+                tooltip: { trigger: 'axis' },
+                legend: { data: ['2025 (今年)', '2024 (去年同期)'], bottom: 0, icon: 'roundRect', textStyle: { fontSize: 10 } },
+                grid: { top: '10%', left: '5%', right: '5%', bottom: '25%', containLabel: true },
+                xAxis: { type: 'category', data: ['Q1', 'Q2', 'Q3', 'Q4'], axisLine: { lineStyle: { color: '#cbd5e1' } } },
+                yAxis: { type: 'value', axisLabel: { formatter: '{value}%' }, splitLine: { lineStyle: { type: 'dashed', color: '#f1f5f9' } } },
+                series: [
+                    { name: '2025 (今年)', type: 'line', data: [5.16, 2.77, 4.53, 2.79], smooth: true, symbolSize: 8, itemStyle: { color: '#10b981' }, lineStyle: { width: 3 }, label: { show: true, position: 'top', formatter: '{c}%', fontSize: 10 } },
+                    { name: '2024 (去年同期)', type: 'line', data: [6.8, 4.2, 5.5, 4.0], smooth: true, lineStyle: { type: 'dashed', width: 2, color: '#94a3b8' }, symbol: 'none' }
+                ]
+            });
+
+            const caseChart = echarts.init(document.getElementById('caseChart'));
+            caseChart.setOption({
+                title: { text: '5186', left: 'center', top: 'center', itemGap: 5, textStyle: { fontSize: 28, fontWeight: '900', color: '#1e293b', fontFamily: 'sans-serif' }, subtextStyle: { fontSize: 12, fontWeight: 'bold', color: '#94a3b8' } },
+                series: [{ type: 'pie', radius: ['65%', '90%'], avoidLabelOverlap: false, label: { show: false }, data: [{ value: 2927, itemStyle: { color: '#3b82f6' } }, { value: 1935, itemStyle: { color: '#00BEBD' } }, { value: 324, itemStyle: { color: '#f59e0b' } }] }]
+            });
+        }
+
+        let chartInstance = null;
+        function initChart(q) {
+            const dom = document.getElementById('reqDistChart');
+            if (chartInstance) chartInstance.dispose();
+            chartInstance = echarts.init(dom);
+            const data = quarterData[q];
+            chartInstance.setOption({
+                tooltip: { trigger: 'item' },
+                legend: { bottom: '0%', itemWidth: 10, itemHeight: 10, textStyle: { color: '#64748b', fontSize: 11 } },
+                series: [{ type: 'pie', radius: ['45%', '70%'], center: ['50%', '50%'], itemStyle: { borderRadius: 8, borderColor: '#fff', borderWidth: 3 }, label: { show: true, formatter: '{b}\n{d}%', fontSize: 11, fontWeight: 'bold' }, data: [{ value: data.ver, name: '版本需求', itemStyle: { color: '#00BEBD' } }, { value: data.nonVer, name: '非版本需求', itemStyle: { color: '#1e293b' } }, { value: data.tech, name: '技术需求', itemStyle: { color: '#99f6e4' } }] }]
+            });
+            document.getElementById('centerTotal').innerText = data.total;
+            document.getElementById('totalNumDisplay').innerText = data.total;
+        }
+
+        function switchQuarter(q) {
+            document.querySelectorAll('.q-btn').forEach(btn => { btn.classList.remove('active-q'); if (btn.dataset.q == q) btn.classList.add('active-q'); });
+            const data = quarterData[q];
+            document.getElementById('quarterFocus').innerHTML = data.focus.map(f => `<div class="flex items-start"><span class="text-teal-500 mr-2 mt-1 text-[10px]">●</span><span class="font-bold text-slate-700 leading-relaxed">${f}</span></div>`).join('');
+            document.getElementById('reqDetailList').innerHTML = data.versions.map(v => `<div class="version-item"><div class="flex items-center mb-3"><span class="bg-slate-800 text-white text-[10px] px-2 py-0.5 rounded font-black mr-2">${v.name}</span><div class="h-[1px] flex-1 bg-slate-100"></div></div><ul class="space-y-2 ml-2">${v.items.map(item => `<li class="text-xs text-slate-500 truncate-list" title="${item}">- ${item}</li>`).join('')}</ul></div>`).join('');
+            initChart(q);
+        }
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const id = entry.target.getAttribute('id'); document.querySelectorAll('.nav-item').forEach(nav => { nav.classList.remove('active'); if (nav.getAttribute('href') === '#' + id) nav.classList.add('active'); }); } }); }, { threshold: 0.4 });
+        document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+        function switchSlide(carouselId, index) {
+            const container = document.getElementById(carouselId);
+            if (!container) return;
+
+            // Update slides
+            const slides = container.querySelectorAll('.carousel-slide');
+            slides.forEach(slide => {
+                if (parseInt(slide.dataset.index) === index) {
+                    slide.classList.remove('opacity-0', 'z-0');
+                    slide.classList.add('opacity-100', 'z-10');
+                } else {
+                    slide.classList.remove('opacity-100', 'z-10');
+                    slide.classList.add('opacity-0', 'z-0');
+                }
+            });
+
+            // Update dots
+            const dots = container.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-slate-300');
+                    dot.classList.add('bg-slate-800');
+                } else {
+                    dot.classList.remove('bg-slate-800');
+                    dot.classList.add('bg-slate-300');
+                }
+            });
+        }
+
+        function initSpecialCharts() {
+            const aiChartDom = document.getElementById('aiTrendChart');
+            if (aiChartDom) {
+                const aiChart = echarts.init(aiChartDom);
+                const aiOption = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: { type: 'shadow' }
+                    },
+                    legend: {
+                        data: ['AI生成数量', 'AI占比(%)', '有效性(%)'],
+                        bottom: 0,
+                        itemWidth: 10,
+                        itemHeight: 10,
+                        textStyle: { fontSize: 10, color: '#64748b' }
+                    },
+                    grid: {
+                        top: '15%',
+                        left: '3%',
+                        right: '3%',
+                        bottom: '12%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: ['Q1', 'Q2', 'Q3', 'Q4'],
+                        axisLine: { show: false },
+                        axisTick: { show: false },
+                        axisLabel: { color: '#64748b', fontSize: 10 }
+                    },
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '数量',
+                            nameTextStyle: { color: '#94a3b8', fontSize: 10 },
+                            splitLine: { lineStyle: { type: 'dashed', color: '#f1f5f9' } },
+                            axisLabel: { color: '#64748b', fontSize: 10 }
+                        },
+                        {
+                            type: 'value',
+                            name: '百分比',
+                            nameTextStyle: { color: '#94a3b8', fontSize: 10 },
+                            max: 100,
+                            splitLine: { show: false },
+                            axisLabel: { formatter: '{value}%', color: '#64748b', fontSize: 10 }
+                        }
+                    ],
+                    series: [
+                        {
+                            name: 'AI生成数量',
+                            type: 'bar',
+                            data: [0, 495, 527, 273],
+                            itemStyle: { color: '#6366f1', borderRadius: [4, 4, 0, 0] },
+                            barWidth: '25%'
+                        },
+                        {
+                            name: 'AI占比(%)',
+                            type: 'line',
+                            yAxisIndex: 1,
+                            data: [0, 50.56, 86.11, 90.40],
+                            itemStyle: { color: '#818cf8' },
+                            symbol: 'circle',
+                            symbolSize: 6,
+                            smooth: true
+                        },
+                        {
+                            name: '有效性(%)',
+                            type: 'line',
+                            yAxisIndex: 1,
+                            data: [0, 60, 75, 75],
+                            itemStyle: { color: '#10b981' },
+                            symbol: 'circle',
+                            symbolSize: 6,
+                            smooth: true,
+                            markPoint: {
+                                data: [{ type: 'max', name: 'Max' }],
+                                label: { color: '#fff', fontSize: 10 }
+                            }
+                        }
+                    ]
+                };
+                aiChart.setOption(aiOption);
+            }
+        }
+
+        window.addEventListener('load', () => { switchQuarter(1); initQualityCharts(); initSpecialCharts(); });
+        window.addEventListener('resize', () => {
+            chartInstance && chartInstance.resize();
+            echarts.getInstanceByDom(document.getElementById('leakRateChart'))?.resize();
+            echarts.getInstanceByDom(document.getElementById('caseChart'))?.resize();
+            echarts.getInstanceByDom(document.getElementById('aiTrendChart'))?.resize();
+        });
+    </script>
+</body>
+
+</html>
