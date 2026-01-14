@@ -417,7 +417,7 @@
         <section id="key-projects" class="bg-white">
             <div class="flex items-center justify-between mb-8">
                 <h3 class="text-2xl font-black text-slate-800 flex items-center">
-                    <span class="w-2 h-8 mr-4 rounded-full" style="background: #6366f1;"></span>
+                    <span class="w-2 h-8 mr-4 rounded-full" style="background: var(--boss-green);"></span>
                     年度重点项目 <span class="ml-4 text-xs font-normal text-slate-400">/ 海雀智选三大版本</span>
                 </h3>
             </div>
@@ -627,7 +627,7 @@
         <section id="quality-data" class="bg-slate-50">
             <div class="flex items-center justify-between mb-8">
                 <h3 class="text-2xl font-black text-slate-800 flex items-center">
-                    <span class="w-2 h-8 mr-4 rounded-full" style="background: #3b82f6;"></span>
+                    <span class="w-2 h-8 mr-4 rounded-full" style="background: var(--boss-green);"></span>
                     业务质量数据 <span class="ml-4 text-xs font-normal text-slate-400">/ 缺陷复盘与漏出分析</span>
                 </h3>
             </div>
@@ -737,7 +737,7 @@
         <section id="quality-assets" class="bg-white">
             <div class="flex items-center justify-between mb-8">
                 <h3 class="text-2xl font-black text-slate-800 flex items-center">
-                    <span class="w-2 h-8 mr-4 rounded-full" style="background: #a855f7;"></span>
+                    <span class="w-2 h-8 mr-4 rounded-full" style="background: var(--boss-green);"></span>
                     业务资产与流程建设 <span class="ml-4 text-xs font-normal text-slate-400">/ 智选保障与文档沉淀</span>
                 </h3>
             </div>
@@ -989,7 +989,7 @@
             <!-- 标题 -->
             <div class="mb-8 shrink-0 relative z-10">
                 <h2 class="text-3xl font-black text-slate-800 tracking-tight">业务专项建设</h2>
-                <div class="h-1 w-16 bg-gradient-to-r from-purple-500 to-indigo-500 mt-3 rounded-full"></div>
+                <div class="h-1 w-16 mt-3 rounded-full" style="background: var(--boss-green);"></div>
             </div>
 
             <div class="grid grid-cols-12 gap-6 flex-1 min-h-0">
@@ -1251,7 +1251,7 @@
             <div class="mb-4 shrink-0 flex justify-between items-end">
                 <div>
                     <h2 class="text-3xl font-black text-slate-800 tracking-tight">测试工具：职位详情</h2>
-                    <div class="h-1 w-24 bg-orange-500 mt-3 rounded-full"></div>
+                    <div class="h-1 w-24 mt-3 rounded-full" style="background: var(--boss-green);"></div>
                 </div>
                 <div class="text-right">
                     <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold">核心利器</span>
@@ -1440,7 +1440,7 @@
         <section id="tool-box" class="bg-slate-50 flex flex-col h-screen box-border overflow-hidden">
             <div class="mb-4 shrink-0">
                 <h2 class="text-3xl font-black text-slate-800 tracking-tight">效能工具生态箱</h2>
-                <div class="h-1 w-16 bg-slate-400 mt-3 rounded-full"></div>
+                <div class="h-1 w-16 mt-3 rounded-full" style="background: var(--boss-green);"></div>
                 <p class="text-sm text-slate-500 mt-2">Toolkit Ecosystem / 覆盖运营、排查、数据三大场景</p>
             </div>
 
@@ -1519,7 +1519,7 @@
             <div class="mb-2 shrink-0 relative z-10 w-full flex justify-between items-end">
                 <div>
                     <h2 class="text-3xl font-black text-slate-800 tracking-tight">未来规划 (2026)</h2>
-                    <div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-indigo-600 mt-3 rounded-full"></div>
+                    <div class="h-1 w-16 mt-3 rounded-full" style="background: var(--boss-green);"></div>
                 </div>
                 <!-- Decor -->
                 <div class="text-slate-300 text-6xl opacity-20 absolute right-0 top-0 pointer-events-none">
@@ -1646,135 +1646,145 @@
                 </div>
             </div>
         </section>
-        </section>
 
-        <section id="summary"
-            class="bg-slate-900 text-white min-h-screen flex flex-col justify-center p-12 relative overflow-hidden">
-            <!-- Background Texture -->
-            <div class="absolute inset-0 opacity-10 pointer-events-none"
-                style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px;">
+        <section id="summary" class="bg-white flex flex-col">
+            <!-- 标题 -->
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-2xl font-black text-slate-800 flex items-center">
+                    <span class="w-2 h-8 mr-4 rounded-full" style="background: var(--boss-green);"></span>
+                    年度总结与致谢 <span class="ml-4 text-xs font-normal text-slate-400">/ Summary & Thanks</span>
+                </h3>
             </div>
 
-            <h2 class="text-4xl font-black text-center mb-12 tracking-tight relative z-10">2025 年度核心回顾 <span
-                    class="text-slate-500 text-2xl font-light ml-2">Summary</span></h2>
-
-            <div class="max-w-6xl mx-auto w-full h-[600px] grid grid-cols-4 grid-rows-3 gap-5 relative z-10">
-                <!-- 1. 漏出率 (2x2) - Green -->
-                <div
-                    class="col-span-2 row-span-2 bg-emerald-500 rounded-[2rem] p-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
-                    <div
-                        class="absolute top-0 right-0 p-8 opacity-20 transform rotate-12 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-chart-line text-9xl text-white"></i>
-                    </div>
-                    <div class="flex flex-col h-full justify-between relative z-10">
-                        <div>
-                            <p class="text-emerald-100 font-bold uppercase tracking-widest text-sm">质量核心指标</p>
-                            <h3 class="text-3xl font-black mt-2">线上漏出率大幅下降</h3>
-                        </div>
-                        <div>
+            <!-- 核心数据回顾 -->
+            <div class="grid grid-cols-12 gap-6 flex-1 min-h-0">
+                <!-- 左侧：核心指标 -->
+                <div class="col-span-8 flex flex-col gap-6">
+                    <!-- 顶部：4个核心数据卡片 -->
+                    <div class="grid grid-cols-4 gap-4">
+                        <!-- 漏出率 -->
+                        <div class="hero-card p-5 border-t-4" style="border-color: var(--boss-green);">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center mr-3" style="background: rgba(0,190,189,0.1);">
+                                    <i class="fas fa-chart-line text-lg" style="color: var(--boss-green);"></i>
+                                </div>
+                                <div class="text-xs text-slate-500 font-bold uppercase">线上漏出率</div>
+                            </div>
                             <div class="flex items-baseline">
-                                <span class="text-8xl font-black tracking-tighter">4.03</span>
-                                <span class="text-3xl font-bold ml-2">%</span>
+                                <span class="text-3xl font-black" style="color: var(--boss-green);">4.03</span>
+                                <span class="text-sm font-bold text-slate-400 ml-1">%</span>
                             </div>
-                            <div
-                                class="mt-2 inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-bold">
-                                ↓ 同比下降 70.15%
+                            <div class="text-xs text-emerald-600 font-bold mt-2">↓ 同比下降 70.15%</div>
+                        </div>
+
+                        <!-- AI用例占比 -->
+                        <div class="hero-card p-5 border-t-4" style="border-color: var(--boss-green);">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center mr-3" style="background: rgba(0,190,189,0.1);">
+                                    <i class="fas fa-brain text-lg" style="color: var(--boss-green);"></i>
+                                </div>
+                                <div class="text-xs text-slate-500 font-bold uppercase">AI用例占比</div>
+                            </div>
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-black" style="color: var(--boss-green);">90.4</span>
+                                <span class="text-sm font-bold text-slate-400 ml-1">%</span>
+                            </div>
+                            <div class="text-xs text-slate-500 font-medium mt-2">AI赋能测试全流程</div>
+                        </div>
+
+                        <!-- 提效工具 -->
+                        <div class="hero-card p-5 border-t-4" style="border-color: var(--boss-green);">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center mr-3" style="background: rgba(0,190,189,0.1);">
+                                    <i class="fas fa-tools text-lg" style="color: var(--boss-green);"></i>
+                                </div>
+                                <div class="text-xs text-slate-500 font-bold uppercase">自研工具</div>
+                            </div>
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-black" style="color: var(--boss-green);">4</span>
+                                <span class="text-sm font-bold text-slate-400 ml-1">款</span>
+                            </div>
+                            <div class="text-xs text-slate-500 font-medium mt-2">覆盖造数/配置/加解密</div>
+                        </div>
+
+                        <!-- 用例资产 -->
+                        <div class="hero-card p-5 border-t-4" style="border-color: var(--boss-green);">
+                            <div class="flex items-center mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center mr-3" style="background: rgba(0,190,189,0.1);">
+                                    <i class="fas fa-cubes text-lg" style="color: var(--boss-green);"></i>
+                                </div>
+                                <div class="text-xs text-slate-500 font-bold uppercase">用例资产</div>
+                            </div>
+                            <div class="flex items-baseline">
+                                <span class="text-3xl font-black" style="color: var(--boss-green);">5000+</span>
+                            </div>
+                            <div class="text-xs text-slate-500 font-medium mt-2">结构化用例沉淀</div>
+                        </div>
+                    </div>
+
+                    <!-- 中部：年度亮点 -->
+                    <div class="hero-card p-6 flex-1">
+                        <h4 class="font-bold text-slate-700 mb-4 flex items-center">
+                            <i class="fas fa-star mr-2" style="color: var(--boss-green);"></i>年度核心亮点
+                        </h4>
+                        <div class="grid grid-cols-2 gap-4 h-[calc(100%-2rem)]">
+                            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 flex flex-col justify-center">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style="background: rgba(0,190,189,0.1);">
+                                        <i class="fas fa-shield-alt" style="color: var(--boss-green);"></i>
+                                    </div>
+                                    <h5 class="font-bold text-slate-700">质量保障</h5>
+                                </div>
+                                <p class="text-sm text-slate-500">全年保障 <span class="font-bold text-slate-700">169</span> 个需求交付，线上 <span class="font-bold" style="color: var(--boss-green);">0 P0/P1</span> 故障</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 flex flex-col justify-center">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style="background: rgba(0,190,189,0.1);">
+                                        <i class="fas fa-robot" style="color: var(--boss-green);"></i>
+                                    </div>
+                                    <h5 class="font-bold text-slate-700">AI智能化</h5>
+                                </div>
+                                <p class="text-sm text-slate-500">AI用例生成覆盖 <span class="font-bold" style="color: var(--boss-green);">90.4%</span>，有效性达 <span class="font-bold text-slate-700">75%</span></p>
+                            </div>
+                            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 flex flex-col justify-center">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style="background: rgba(0,190,189,0.1);">
+                                        <i class="fas fa-rocket" style="color: var(--boss-green);"></i>
+                                    </div>
+                                    <h5 class="font-bold text-slate-700">效能提升</h5>
+                                </div>
+                                <p class="text-sm text-slate-500">自研工具实现 <span class="font-bold" style="color: var(--boss-green);">40倍</span> 效率提升，赋能产研运</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 flex flex-col justify-center">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style="background: rgba(0,190,189,0.1);">
+                                        <i class="fas fa-plug" style="color: var(--boss-green);"></i>
+                                    </div>
+                                    <h5 class="font-bold text-slate-700">未来规划</h5>
+                                </div>
+                                <p class="text-sm text-slate-500">集成管家 <span class="font-bold" style="color: var(--boss-green);">MCP</span>，打造测试 Agent 助手</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. AI Tech (1x2) - Indigo -->
-                <div
-                    class="col-span-1 row-span-2 bg-indigo-600 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="absolute -bottom-4 -right-4 text-indigo-400 opacity-20">
-                        <i class="fas fa-brain text-[10rem]"></i>
-                    </div>
-                    <div class="flex flex-col h-full relative z-10">
-                        <div
-                            class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4 backdrop-blur-sm">
-                            <i class="fas fa-magic text-2xl text-white"></i>
+                <!-- 右侧：致谢 -->
+                <div class="col-span-4 flex flex-col">
+                    <div class="hero-card p-8 h-full flex flex-col justify-center items-center text-center border-l-4" style="border-color: var(--boss-green);">
+                        <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6" style="background: rgba(0,190,189,0.1);">
+                            <i class="fas fa-heart text-4xl" style="color: var(--boss-green);"></i>
                         </div>
-                        <h3 class="text-2xl font-black mb-2">AI 智能化</h3>
-                        <p class="text-indigo-200 text-sm leading-relaxed mb-8">AI 赋能测试全流程，从用例生成到缺陷分析。</p>
-                        <div class="mt-auto">
-                            <p class="text-xs text-indigo-300 uppercase font-bold">AI Case 占比</p>
-                            <p class="text-5xl font-black">90.4%</p>
-                        </div>
+                        <h3 class="text-2xl font-black text-slate-800 mb-4">Thank You</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6">
+                            感谢各位领导和同事<br>
+                            一年来的支持与帮助<br>
+                            2026 继续努力！
+                        </p>
+                        <div class="w-16 h-1 rounded-full mb-6" style="background: var(--boss-green);"></div>
+                        <p class="text-sm text-slate-400 font-medium">请批评指正</p>
                     </div>
                 </div>
-
-                <!-- 3. Tools (1x1) - Orange -->
-                <div
-                    class="col-span-1 row-span-1 bg-orange-500 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="flex flex-col h-full justify-between">
-                        <div class="flex justify-between items-start">
-                            <h3 class="text-lg font-black">自研提效工具</h3>
-                            <i class="fas fa-tools text-orange-200 text-xl"></i>
-                        </div>
-                        <div>
-                            <span class="text-5xl font-black">4</span> <span class="font-bold text-orange-200">款</span>
-                            <p class="text-xs text-orange-100 mt-1 opacity-80">覆盖造数/配置/加解密</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Assets (1x1) - Blue -->
-                <div
-                    class="col-span-1 row-span-1 bg-blue-500 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="flex flex-col h-full justify-between">
-                        <div class="flex justify-between items-start">
-                            <h3 class="text-lg font-black">用例资产</h3>
-                            <i class="fas fa-cube text-blue-200 text-xl"></i>
-                        </div>
-                        <div>
-                            <span class="text-4xl font-black">5000+</span>
-                            <p class="text-xs text-blue-100 mt-1 opacity-80">结构化用例沉淀</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Future/MCP (2x1) - Dark Slate -->
-                <div
-                    class="col-span-2 row-span-1 bg-slate-800 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 border border-slate-700">
-                    <div class="flex items-center h-full">
-                        <div
-                            class="mr-6 shrink-0 w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg">
-                            <i class="fas fa-rocket text-3xl"></i>
-                        </div>
-                        <div>
-                            <p class="text-amber-500 font-bold text-xs uppercase tracking-widest mb-1">Next Step</p>
-                            <h3 class="text-2xl font-black text-white">集成管家 MCP</h3>
-                            <p class="text-slate-400 text-sm mt-1">打造下一代 Agentic Testing Assistant</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Zero Faults (1x1) - Purple -->
-                <div
-                    class="col-span-1 row-span-1 bg-purple-500 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
-                    <div class="flex flex-col h-full justify-center text-center">
-                        <p class="text-purple-200 font-bold uppercase text-xs">线上 P0/P1</p>
-                        <p class="text-6xl font-black my-1">0</p>
-                        <p class="text-white font-bold text-sm">全年无重大故障</p>
-                    </div>
-                </div>
-
-                <!-- 7. Thank You (1x1) - White -->
-                <div
-                    class="col-span-1 row-span-1 bg-white text-slate-900 rounded-[2rem] p-6 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center">
-                    <div class="text-center">
-                        <div class="inline-block p-3 bg-red-50 rounded-full text-red-500 mb-2">
-                            <i class="fas fa-heart text-2xl animate-pulse"></i>
             </div>
-                        <h3 class="text-xl font-black">Thank You</h3>
-                        <p class="text-xs text-slate-400 mt-1">请批评指正</p>
-                    </div>
-                </div>
-
-            </div>
-
-
         </section>
     </main>
 
